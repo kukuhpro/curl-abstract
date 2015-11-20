@@ -1,0 +1,21 @@
+{
+    "name": "kukuhprabowo/curl-abstract",
+    "type": "library",
+    "description": "Abstract class for curl use in php.",
+    "keywords": ["curl", "Abstract"],
+    "authors": [
+        {
+            "name": "Kukuh Prabowo",
+            "email": "kukuhpro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AbstractCurl\\": "src/AbstractCurl/"
+        }
+    },
+    "minimum-stability": "dev"
+}
