@@ -18,6 +18,7 @@ trait TraitCurl
     protected $endPoint;
     protected $apps;
     protected $http_query = false;
+    protected $https      = false;
 
     /**
      * Setting method http for curl

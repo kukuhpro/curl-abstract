@@ -102,7 +102,11 @@ abstract class AbstractCurl
                 $url .= '?' . http_build_query($params);
             }
         } else {
-            $this->setCurlOptions([CURLOPT_POST => true]);
+            if ('POST' == $this->method) {
+                $this->setCurlOptions([CURLOPT_POST => true]);
+            } else {
+                $this->setCurlOptions([CURLOPT_CUSTOMREQUEST => $this->method]);
+            }
             if ($this->json) {
                 $this->setCurlOptions([CURLOPT_POSTFIELDS => json_encode($params)]);
                 $this->setHeader('Content-Type', 'application/json');
@@ -113,6 +117,9 @@ abstract class AbstractCurl
                     $this->setCurlOptions([CURLOPT_POSTFIELDS => $params]);
                 }
             }
+        }
+        if ($this->https) {
+            $url = str_replace("http", "https", $url);
         }
         $this->setCurlOptions([CURLOPT_URL => $url]);
     }
@@ -129,11 +136,9 @@ abstract class AbstractCurl
             curl_setopt($ch, $option, $value);
         }
 
-        if (env('APP_ENV') == 'local') {
-            curl_setopt($ch, CURLOPT_VERBOSE, true);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        }
+        curl_setopt($ch, CURLOPT_VERBOSE, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
         $http_response = curl_exec($ch);
         $http_status   = intval(curl_getinfo($ch, CURLINFO_HTTP_CODE));
