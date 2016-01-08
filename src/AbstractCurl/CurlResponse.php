@@ -44,6 +44,9 @@ class CurlResponse
             }
             $this->header = $headers;
             $this->body   = json_decode(substr($data, $header_size));
+            if (empty($this->body)) {
+                $this->body = substr($data, $header_size);
+            }
         } else {
             $this->body = json_decode($data);
         }
