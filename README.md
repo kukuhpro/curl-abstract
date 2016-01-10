@@ -16,7 +16,7 @@ Sometimes in our application we like to connect our application with many thirdp
 <?php
     required_once("vendor/autoload.php");
 
-    use Kukuhprabowo/AbstractCurl;
+    use Kukuhprabowo\AbstractCurl;
 
     /**
      * This class GCM is for setup configuration and method
@@ -84,3 +84,5 @@ Sometimes in our application we like to connect our application with many thirdp
         }
     }
 ```
+
+#### For complete Tutorial visit [this link](http://kukuhpro.github.io/php/curl/2016/01/10/easy-curl-php.html)
