@@ -136,10 +136,6 @@ abstract class AbstractCurl
             curl_setopt($ch, $option, $value);
         }
 
-        curl_setopt($ch, CURLOPT_VERBOSE, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-
         $http_response = curl_exec($ch);
         $http_status   = intval(curl_getinfo($ch, CURLINFO_HTTP_CODE));
         $http_error    = curl_error($ch);
