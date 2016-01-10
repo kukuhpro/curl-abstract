@@ -64,8 +64,8 @@ Sometimes in our application we like to connect our application with many thirdp
 
         /**
          * create method on http connection with a function
-         * @param  {Array}  $params Data that you want to send, it could be 
-         *                          anything
+         * @param  {Array}  $params Data that you want to send, it must be 
+         *                          an array
          * @return ObjectClass return of this result will object class 
          *                     CurlResponse
          */
