@@ -1,4 +1,4 @@
-<?php namespace AbstractCurl;
+<?php namespace Kukuhprabowo;
 
 /**
  * @author Kukuh Prabowo <kukuhpro@gmail.com>

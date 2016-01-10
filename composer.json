@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AbstractCurl\\": "src/AbstractCurl/"
+            "Kukuhprabowo\\": "src/AbstractCurl/"
         }
     },
     "minimum-stability": "dev"

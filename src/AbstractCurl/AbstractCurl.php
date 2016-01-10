@@ -1,7 +1,7 @@
-<?php namespace AbstractCurl;
+<?php namespace Kukuhprabowo;
 
-use AbstractCurl\CurlResponse;
-use AbstractCurl\TraitCurl;
+use Kukuhprabowo\CurlResponse;
+use Kukuhprabowo\TraitCurl;
 
 /**
  * @author Kukuh Prabowo <kukuhpro@gmail.com>
